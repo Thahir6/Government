@@ -1,0 +1,160 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #060F1E;
+  --foreground: #F8FAFC;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  overflow-x: hidden;
+}
+
+/* Custom modern scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0A192F;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1E3A8A;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #2563EB;
+}
+
+/* Glassmorphism card utilities */
+.glass-panel {
+  background: rgba(15, 36, 68, 0.7);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glass-panel-hover {
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-panel-hover:hover {
+  background: rgba(18, 43, 85, 0.85);
+  border-color: rgba(37, 99, 235, 0.4);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px -10px rgba(0, 0, 0, 0.5), 0 0 20px -5px rgba(37, 99, 235, 0.2);
+}
+
+/* Badge styles */
+.badge-eligible {
+  background: rgba(16, 185, 129, 0.15);
+  color: #34D399;
+  border: 1px solid rgba(16, 185, 129, 0.3);
+}
+
+.badge-verification {
+  background: rgba(245, 158, 11, 0.15);
+  color: #FBBF24;
+  border: 1px solid rgba(245, 158, 11, 0.3);
+}
+
+.badge-unmatched {
+  background: rgba(239, 68, 68, 0.12);
+  color: #F87171;
+  border: 1px solid rgba(239, 68, 68, 0.25);
+}
+
+/* Gradient text utility */
+.text-gradient-india {
+  background: linear-gradient(135deg, #F59E0B 0%, #FFFFFF 50%, #10B981 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-gradient-blue {
+  background: linear-gradient(135deg, #60A5FA 0%, #3B82F6 50%, #818CF8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Subtle Government Technology Ambient Background */
+.gov-ambient-bg {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.gov-ambient-grid {
+  position: absolute;
+  inset: 0;
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+  background-size: 48px 48px;
+  mask-image: radial-gradient(ellipse 90% 70% at 50% 15%, black 40%, transparent 80%);
+  -webkit-mask-image: radial-gradient(ellipse 90% 70% at 50% 15%, black 40%, transparent 80%);
+}
+
+.gov-ambient-glow-1 {
+  position: absolute;
+  top: -15%;
+  left: 25%;
+  width: 50%;
+  height: 600px;
+  background: radial-gradient(ellipse at center, rgba(37, 99, 235, 0.16) 0%, rgba(30, 58, 138, 0.08) 45%, transparent 70%);
+  filter: blur(60px);
+  animation: slow-pulse 24s ease-in-out infinite alternate;
+  will-change: transform, opacity;
+}
+
+.gov-ambient-glow-2 {
+  position: absolute;
+  top: 15%;
+  right: -10%;
+  width: 45%;
+  height: 550px;
+  background: radial-gradient(ellipse at center, rgba(6, 182, 212, 0.09) 0%, rgba(14, 116, 144, 0.04) 50%, transparent 70%);
+  filter: blur(70px);
+  animation: slow-drift 28s ease-in-out infinite alternate;
+  will-change: transform, opacity;
+}
+
+.gov-ambient-glow-3 {
+  position: absolute;
+  top: 45%;
+  left: -8%;
+  width: 40%;
+  height: 500px;
+  background: radial-gradient(ellipse at center, rgba(59, 130, 246, 0.08) 0%, rgba(30, 64, 175, 0.03) 50%, transparent 70%);
+  filter: blur(80px);
+  animation: slow-drift-alt 32s ease-in-out infinite alternate;
+  will-change: transform, opacity;
+}
+
+@keyframes slow-pulse {
+  0% { transform: scale(1) translateY(0); opacity: 0.8; }
+  50% { transform: scale(1.06) translateY(20px); opacity: 1; }
+  100% { transform: scale(1) translateY(0); opacity: 0.8; }
+}
+
+@keyframes slow-drift {
+  0% { transform: translate(0, 0); opacity: 0.7; }
+  50% { transform: translate(-30px, 25px); opacity: 1; }
+  100% { transform: translate(0, 0); opacity: 0.7; }
+}
+
+@keyframes slow-drift-alt {
+  0% { transform: translate(0, 0); opacity: 0.6; }
+  50% { transform: translate(25px, -20px); opacity: 0.9; }
+  100% { transform: translate(0, 0); opacity: 0.6; }
+}
+
